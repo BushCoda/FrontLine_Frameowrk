@@ -5,11 +5,15 @@
 // Phase: 7
 //------------------------------------------------------------------
 
-class FLF_SupportSystem : ScriptedGameComponent
+[ComponentEditorProps(category: "FrontLine Framework/Game", description: "Manages support call-ins from the HQ Terminal")]
+class FLF_SupportSystemClass : ScriptComponentClass
 {
-	override protected void OnPostInit(IEntity owner)
+}
+
+class FLF_SupportSystem : ScriptComponent
+{
+	protected override void OnPostInit(IEntity owner)
 	{
-		super.OnPostInit(owner);
 		// TODO Phase 7: Initialise support system and cooldown timers
 	}
 

@@ -5,11 +5,18 @@
 // Phase: 7
 //------------------------------------------------------------------
 
-class FLF_FortificationSystem : ScriptedGameComponent
+[ComponentEditorProps(category: "FrontLine Framework/Game", description: "Handles fortification placement at player-owned bases")]
+class FLF_FortificationSystemClass : ScriptComponentClass
 {
-	override protected void OnPostInit(IEntity owner)
+}
+
+class FLF_FortificationSystem : ScriptComponent
+{
+	[Attribute(defvalue: "50", desc: "Max fortifications allowed at this base", category: "Fortification")]
+	protected int m_MaxFortifications;
+
+	protected override void OnPostInit(IEntity owner)
 	{
-		super.OnPostInit(owner);
 		// TODO Phase 7: Initialise fortification system and connect to HQ terminal
 	}
 

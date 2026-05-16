@@ -5,11 +5,15 @@
 // Phase: 8
 //------------------------------------------------------------------
 
-class FLF_HUD : ScriptedGameComponent
+[ComponentEditorProps(category: "FrontLine Framework/UI", description: "Player HUD displaying supplies, objectives and alerts")]
+class FLF_HUDClass : ScriptComponentClass
 {
-	override protected void OnPostInit(IEntity owner)
+}
+
+class FLF_HUD : ScriptComponent
+{
+	protected override void OnPostInit(IEntity owner)
 	{
-		super.OnPostInit(owner);
 		// TODO Phase 8: Initialise HUD elements
 	}
 

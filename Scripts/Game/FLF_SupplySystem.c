@@ -5,14 +5,23 @@
 // Phase: 6
 //------------------------------------------------------------------
 
-class FLF_SupplySystem : ScriptedGameComponent
+[ComponentEditorProps(category: "FrontLine Framework/Game", description: "Manages supply generation and friendly AI truck convoys")]
+class FLF_SupplySystemClass : ScriptComponentClass
 {
-	protected int m_SupplyPool = 0;
-	protected float m_GenerationRatePerMinute = 10.0;
+}
 
-	override protected void OnPostInit(IEntity owner)
+class FLF_SupplySystem : ScriptComponent
+{
+	[Attribute(defvalue: "10", desc: "Supplies generated per minute when depot is PlayerOwned", category: "Supply")]
+	protected float m_GenerationRatePerMinute;
+
+	[Attribute(defvalue: "100", desc: "Max supplies per truck load", category: "Supply")]
+	protected int m_TruckCapacity;
+
+	protected int m_SupplyPool = 0;
+
+	protected override void OnPostInit(IEntity owner)
 	{
-		super.OnPostInit(owner);
 		// TODO Phase 6: Initialise supply system and connect to HQ pool
 	}
 

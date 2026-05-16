@@ -5,11 +5,15 @@
 // Phase: 7
 //------------------------------------------------------------------
 
-class FLF_HQTerminalUI : ScriptedGameComponent
+[ComponentEditorProps(category: "FrontLine Framework/UI", description: "HQ Command Terminal UI for fortification and support call-ins")]
+class FLF_HQTerminalUIClass : ScriptComponentClass
 {
-	override protected void OnPostInit(IEntity owner)
+}
+
+class FLF_HQTerminalUI : ScriptComponent
+{
+	protected override void OnPostInit(IEntity owner)
 	{
-		super.OnPostInit(owner);
 		// TODO Phase 7: Initialise HQ terminal UI layout
 	}
 

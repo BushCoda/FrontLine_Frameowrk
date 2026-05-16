@@ -5,13 +5,18 @@
 // Phase: 4
 //------------------------------------------------------------------
 
-class FLF_RadioSignalSystem : ScriptedGameComponent
+[ComponentEditorProps(category: "FrontLine Framework/Game", description: "Projects signal radius from a base radio tower")]
+class FLF_RadioSignalSystemClass : ScriptComponentClass
 {
-	protected float m_SignalRadiusMeters = 1500.0;
+}
 
-	override protected void OnPostInit(IEntity owner)
+class FLF_RadioSignalSystem : ScriptComponent
+{
+	[Attribute(defvalue: "1500", desc: "Signal radius in metres projected by this base", category: "Signal")]
+	protected float m_SignalRadiusMeters;
+
+	protected override void OnPostInit(IEntity owner)
 	{
-		super.OnPostInit(owner);
 		// TODO Phase 4: Initialise signal radius and register base
 	}
 

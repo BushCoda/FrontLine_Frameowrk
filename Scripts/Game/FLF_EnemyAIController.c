@@ -5,11 +5,15 @@
 // Phase: 5
 //------------------------------------------------------------------
 
-class FLF_EnemyAIController : ScriptedGameComponent
+[ComponentEditorProps(category: "FrontLine Framework/Game", description: "Controls enemy AI garrison and counter-attack behaviour")]
+class FLF_EnemyAIControllerClass : ScriptComponentClass
 {
-	override protected void OnPostInit(IEntity owner)
+}
+
+class FLF_EnemyAIController : ScriptComponent
+{
+	protected override void OnPostInit(IEntity owner)
 	{
-		super.OnPostInit(owner);
 		// TODO Phase 5: Initialise garrison groups at this base
 	}
 

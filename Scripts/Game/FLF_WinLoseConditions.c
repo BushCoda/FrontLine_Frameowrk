@@ -5,11 +5,15 @@
 // Phase: 8
 //------------------------------------------------------------------
 
-class FLF_WinLoseConditions : ScriptedGameComponent
+[ComponentEditorProps(category: "FrontLine Framework/Game", description: "Monitors HQ capture state and triggers win/lose conditions")]
+class FLF_WinLoseConditionsClass : ScriptComponentClass
 {
-	override protected void OnPostInit(IEntity owner)
+}
+
+class FLF_WinLoseConditions : ScriptComponent
+{
+	protected override void OnPostInit(IEntity owner)
 	{
-		super.OnPostInit(owner);
 		// TODO Phase 8: Register HQ capture point listeners
 	}
 

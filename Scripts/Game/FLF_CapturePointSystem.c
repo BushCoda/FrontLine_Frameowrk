@@ -13,19 +13,24 @@ enum FLF_E_CaptureState
 	ENEMY_OWNED
 }
 
-class FLF_CapturePointComponent : ScriptedGameComponent
+[ComponentEditorProps(category: "FrontLine Framework/Game", description: "Manages capture point state machine")]
+class FLF_CapturePointComponentClass : ScriptComponentClass
+{
+}
+
+class FLF_CapturePointComponent : ScriptComponent
 {
 	protected FLF_E_CaptureState m_CaptureState = FLF_E_CaptureState.NEUTRAL;
 
-	override protected void OnPostInit(IEntity owner)
+	protected override void OnPostInit(IEntity owner)
 	{
-		super.OnPostInit(owner);
-		// TODO Phase 3: Initialise capture point state
+		m_CaptureState = FLF_E_CaptureState.NEUTRAL;
 		SetEventMask(owner, EntityEvent.FRAME);
 	}
 
 	override void EOnFrame(IEntity owner, float timeSlice)
 	{
+		super.EOnFrame(owner, timeSlice);
 		// TODO Phase 3: Handle capture progress logic
 	}
 
