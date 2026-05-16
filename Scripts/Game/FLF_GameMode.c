@@ -27,7 +27,7 @@ class FLF_GameMode : SCR_BaseGameMode
 	{
 		super.OnGameModeStart();
 
-		if (!GetGame().IsServer())
+		if (RplSession.Mode() == RplMode.Client)
 			return;
 
 		// TODO Phase 3: Initialise all capture points to their default states
@@ -61,10 +61,10 @@ class FLF_GameMode : SCR_BaseGameMode
 	//------------------------------------------------------------------
 	void TriggerPlayerVictory()
 	{
-		if (!GetGame().IsServer())
+		if (RplSession.Mode() == RplMode.Client)
 			return;
 
-		SCR_GameModeEndData endData = SCR_GameModeEndData.CreateSimple(EGameOverTypes.DEFENDER_WIN);
+		SCR_GameModeEndData endData = SCR_GameModeEndData.CreateSimple(EGameOverTypes.VICTORY);
 		EndGameMode(endData);
 	}
 
@@ -73,10 +73,10 @@ class FLF_GameMode : SCR_BaseGameMode
 	//------------------------------------------------------------------
 	void TriggerPlayerDefeat()
 	{
-		if (!GetGame().IsServer())
+		if (RplSession.Mode() == RplMode.Client)
 			return;
 
-		SCR_GameModeEndData endData = SCR_GameModeEndData.CreateSimple(EGameOverTypes.ATTACKER_WIN);
+		SCR_GameModeEndData endData = SCR_GameModeEndData.CreateSimple(EGameOverTypes.LOOSE);
 		EndGameMode(endData);
 	}
 }
