@@ -31,11 +31,15 @@ class FLF_WinLoseConditions : ScriptComponent
 
 	protected void TriggerWin()
 	{
-		// TODO Phase 8: Display victory screen and end session
+		FLF_GameMode gameMode = FLF_GameMode.Cast(GetGame().GetGameMode());
+		if (gameMode)
+			gameMode.TriggerPlayerVictory();
 	}
 
 	protected void TriggerLose()
 	{
-		// TODO Phase 8: Display defeat screen and end session
+		FLF_GameMode gameMode = FLF_GameMode.Cast(GetGame().GetGameMode());
+		if (gameMode)
+			gameMode.TriggerPlayerDefeat();
 	}
 }
