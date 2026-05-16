@@ -21,11 +21,11 @@ class FLF_GameModeClass : SCR_BaseGameModeClass
 class FLF_GameMode : SCR_BaseGameMode
 {
 	//------------------------------------------------------------------
-	// Called when the game mode initialises on the server
+	// Called on every machine when the match starts
 	//------------------------------------------------------------------
-	override protected void OnGameStart()
+	override void OnGameModeStart()
 	{
-		super.OnGameStart();
+		super.OnGameModeStart();
 
 		if (!GetGame().IsServer())
 			return;
@@ -37,16 +37,23 @@ class FLF_GameMode : SCR_BaseGameMode
 	}
 
 	//------------------------------------------------------------------
-	// Called every frame on the server
+	// Called when the match finishes (win or lose)
 	//------------------------------------------------------------------
-	override protected void OnUpdate(EUpdateSimFlags simFlags)
+	override void OnGameModeEnd(SCR_GameModeEndData endData)
 	{
-		super.OnUpdate(simFlags);
+		super.OnGameModeEnd(endData);
 
-		if (!GetGame().IsServer())
-			return;
+		// TODO Phase 8: Show end-game scoreboard/summary based on endData
+	}
 
-		// TODO Phase 3+: Tick game systems as needed
+	//------------------------------------------------------------------
+	// Called when a player is killed
+	//------------------------------------------------------------------
+	override void OnPlayerKilled(int playerId, IEntity playerEntity, IEntity killerEntity, notnull Instigator killer)
+	{
+		super.OnPlayerKilled(playerId, playerEntity, killerEntity, killer);
+
+		// TODO Phase 8: Handle player death (respawn logic, ticket system, etc.)
 	}
 
 	//------------------------------------------------------------------
@@ -71,28 +78,5 @@ class FLF_GameMode : SCR_BaseGameMode
 
 		SCR_GameModeEndData endData = SCR_GameModeEndData.CreateSimple(EGameOverTypes.ATTACKER_WIN);
 		EndGameMode(endData);
-	}
-
-	//------------------------------------------------------------------
-	// Called when game state changes (PREGAME → GAME → POSTGAME)
-	//------------------------------------------------------------------
-	override protected void OnGameStateChanged(SCR_EGameModeState newState)
-	{
-		super.OnGameStateChanged(newState);
-
-		switch (newState)
-		{
-			case SCR_EGameModeState.PREGAME:
-				// TODO Phase 8: Show pre-game briefing UI
-				break;
-
-			case SCR_EGameModeState.GAME:
-				// TODO Phase 8: Show in-game HUD
-				break;
-
-			case SCR_EGameModeState.POSTGAME:
-				// TODO Phase 8: Show end-game scoreboard/summary
-				break;
-		}
 	}
 }
