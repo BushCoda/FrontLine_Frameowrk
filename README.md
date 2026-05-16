@@ -1,5 +1,13 @@
-# 🪖 FrontLine Framework
+# ⚔️ FrontLine Framework
 ### Arma Reforger — Conflict PvE Framework
+
+<p align="center">
+  <img src="assets/images/FLF_Logo.png" alt="FrontLine Framework Logo" width="300"/>
+</p>
+
+<p align="center">
+  <img src="assets/images/FLF_LoadingScreen.png" alt="FrontLine Framework Banner"/>
+</p>
 
 ![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
 ![Map](https://img.shields.io/badge/Map-Everon-blue)
@@ -33,7 +41,7 @@ This repository serves as the **official documentation and progress tracking hub
 | 📦 Supply Depots | Passively generate supplies; friendly AI trucks haul resources to HQ |
 | 🛠️ Fortification System | Spend supplies to fortify bases with defences |
 | 📞 Support Systems | Call in artillery, CAS, reinforcements and more via HQ Terminal |
-| 🤖 Enemy AI | Reactive AI that only pushes actively contested capture points |
+| 🦾 Enemy AI | Reactive AI that only pushes actively contested capture points |
 | 🏆 Win / Lose Conditions | HQ capture determines the outcome |
 
 ---
@@ -42,13 +50,13 @@ This repository serves as the **official documentation and progress tracking hub
 
 ```
 docs/
-├── design/          # Feature design documents
-├── scripting/       # EnforceScript reference and patterns
-└── setup/           # Workbench and mod setup guides
-ROADMAP.md           # Phase-by-phase development plan
-CHANGELOG.md         # Version history and change log
-CONTRIBUTING.md      # Contribution guidelines
-LICENSE              # Mod license
+├── design/           # Feature design documents
+├── scripting/        # EnforceScript reference and patterns
+└── setup/            # Workbench and mod setup guides
+ROADMAP.md            # Phase-by-phase development plan
+CHANGELOG.md          # Version history and change log
+CONTRIBUTING.md       # Contribution guidelines
+LICENSE               # Mod license
 ```
 
 ---
